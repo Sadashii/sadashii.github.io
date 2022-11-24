@@ -1,12 +1,13 @@
 import * as React from "react"
 import "../styles/styles.scss"
-import { Landing, Navbar } from "../components";
+import { Expertise, Landing, Navbar } from "../components";
 
 const IndexPage = () => {
   return (
     <>
       <Navbar />
       <Landing />
+      <Expertise />
     </>
   )
 }
