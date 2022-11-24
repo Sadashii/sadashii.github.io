@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+/* variables.module.scss */
+$black_background: #1a191d;
+
+$textWhite: #ffffff;
+$textGrey: rgba(249, 249, 249, 0.75);
+$textGreyGrey: rgba(249, 249, 249, 0.6);
+$purple: #6e07f3;
+$aqua: #66d9ed;
+
+$transition_duration: 250ms;
+
+$border_radius: 4px;
+
+//
+
+* {
+  padding: 0;
+  margin: 0;
+  transition-duration: $transition_duration;
+  font-family: "Poppins", 'system-ui';
+}
+
+body {
+  background-color: $black_background;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
+  font-weight: bold;
+
+  .navbar-logo {
+    display: inline-flex;
+    font-size: 2rem;
+    cursor: pointer;
+
+    span.pre {
+      color: $textWhite
+    }
+    span.mid {
+      color: $purple;
+    }
+    span.post {
+      color: $aqua;
+    }
+
+    &:hover {
+      opacity: .75;
+    }
+  }
+
+  .navbar-options {
+    display: inline-flex;
+
+    .navbar-option {
+      color: $textWhite;
+      cursor: pointer;
+      margin-right: $border_radius * 4;
+      transition-delay: $transition_duration * 3/4;
+
+      &:before {
+        content: '//';
+        margin-right: $border_radius;
+        color: mix(black, $aqua, 20%);
+      }
+    }
+
+    &:hover .navbar-option:not(:hover) {
+      color: $textGreyGrey;
+    }
+  }
+  font-family: "Space Mono", 'system-ui';
+}
+
+.landing {
+  display: flex;
+  justify-content: space-between;
+  padding: 25vh 10vw 0;
+
+  .title {
+    text-transform: uppercase;
+    color: $textWhite;
+    font-size: 4.5rem;
+    position: relative;
+
+    //&:after {
+    //  content: "~ Sadashi";
+    //  position: absolute;
+    //  font-size: 1.25rem;
+    //  bottom: 0;
+    //  right: 0;
+    //
+    //  background: -webkit-linear-gradient(180deg, $aqua 75%, $purple);
+    //  -webkit-background-clip: text;
+    //  -webkit-text-fill-color: transparent;
+    //}
+  }
+  .subtitle {
+    text-transform: uppercase;
+    color: $textWhite;
+    margin-bottom: 1rem;
+  }
+  .about {
+    max-width: 550px;
+    color: $textGrey;
+  }
+
+  .webgl {
+    width: 100%;
+    max-width: 600px;
+  }
+}
