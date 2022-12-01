@@ -12,33 +12,42 @@ const Expertise = () => {
   const backgroundImageRef = useRef();
   
   useEffect(() => {
+    let animations = [
+      {
+        element: titleRef.current,
+        start: 'top 75%',
+        end: 'bottom 50%',
+      },
+      {
+        element: categoriesRef.current,
+        start: 'top 65%',
+        end: 'bottom 50%',
+      },
+    ]
+  
     const onEnter = (el, opacity = 1) => {
+      if (!el) return
       el.style.opacity = opacity
-      el.style.transform = 'translateY(-100px)'
+      el.style.transform = 'translateY(0px)'
     }
     const onLeaveBack = (el) => {
+      if (!el) return
       el.style.opacity = 0
-      el.style.transform = 'translateY(0)'
+      el.style.transform = 'translateY(100px)'
+    }
+  
+    for (const animation of animations) {
+      gsap.to(animation.element, {
+        scrollTrigger: {
+          trigger: animation.element,
+          start: animation.start,
+          end: animation.end,
+          onEnter: () => onEnter(animation.element),
+          onLeaveBack: () => onLeaveBack(animation.element)
+        }
+      });
     }
     
-    gsap.to(titleRef.current, {
-      scrollTrigger: {
-        trigger: titleRef.current,
-        start: "top 75%",
-        end: "bottom 50%",
-        onEnter: () => onEnter(titleRef.current),
-        onLeaveBack: () => onLeaveBack(titleRef.current)
-      }
-    });
-    gsap.to(categoriesRef.current, {
-      scrollTrigger: {
-        trigger: categoriesRef.current,
-        start: "top 65%",
-        end: "bottom 50%",
-        onEnter: () => onEnter(categoriesRef.current),
-        onLeaveBack: () => onLeaveBack(categoriesRef.current)
-      }
-    });
     gsap.to(backgroundImageRef.current, {
       scrollTrigger: {
         trigger: backgroundImageRef.current,

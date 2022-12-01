@@ -1,4 +1,23 @@
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { useRef } from "react";
 import * as React from "react"
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
+
+const Avatar = (props) => {
+  const avatarRef = useRef()
+  const gltf = useLoader(GLTFLoader, '/scene.gltf')
+  
+  useFrame(({ mouse }) => {
+    avatarRef.current.rotation.y = mouse.x;
+    avatarRef.current.rotation.x = -mouse.y;
+  });
+  
+  return (
+    <mesh ref={avatarRef} {...props}>
+      <primitive object={gltf.scene} />
+    </mesh>
+  )
+}
 
 const Landing = () => {
   
@@ -10,7 +29,10 @@ const Landing = () => {
         <p className="about">Full-time high school student, full(er)-time fullstack developer. I love building things, websites mainly but messing around here and there too (WebGL's pretty cool).</p>
       </div>
       <div className="webgl">
-      {/*    placeholder for animation */}
+        <Canvas camera={{ position: [0, 0, 45]}}>
+          <ambientLight />
+          {/* <Avatar position={[0, 0, 0]} /> */}
+        </Canvas>
       </div>
     </div>
   )

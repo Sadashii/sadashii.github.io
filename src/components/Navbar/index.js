@@ -27,7 +27,7 @@ const Navbar = () => {
   
   return (
     <>
-      <div className="navbar" style={{opacity: (showScrollNavbar ? 1 : 0)}}>
+      <div className="navbar" style={{opacity: (showScrollNavbar ? 1 : 0), display: !showScrollNavbar && 'none'}}>
         <div className="navbar-logo" onClick={() => scrollTo(0)}>
           <span className="pre">Sadashi</span>
           <span className="mid">.</span>
@@ -42,28 +42,19 @@ const Navbar = () => {
           </div>
           <div
             className="navbar-option"
-            onClick={() => scrollTo(document.getElementsByClassName('expertise')[0].offsetTop)}>
+            onClick={() => scrollTo(document.getElementsByClassName('expertise')[0].offsetTop - 50)}>
             Expertise
           </div>
           <div
             className="navbar-option"
             onClick={() => {
-            
-            }}>
-            Experience
-          </div>
-          <div
-            className="navbar-option"
-            onClick={() => {
-            
+      
             }}>
             Work
           </div>
           <div
             className="navbar-option"
-            onClick={() => {
-            
-            }}>
+            onClick={() => scrollTo(document.getElementsByClassName('contact')[0].offsetTop)}>
             Contact
           </div>
         </div>

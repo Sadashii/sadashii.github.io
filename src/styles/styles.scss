@@ -35,7 +35,6 @@ body {
   height: $navbar_height;
   position: sticky;
   top: 0;
-  width: calc(100vw - 6.5rem);
 
   .navbar-logo {
     display: inline-flex;
@@ -62,7 +61,7 @@ body {
     .navbar-option {
       cursor: pointer;
       margin-right: $border_radius * 4;
-      transition-delay: $transition_duration * 3/4;
+      transition-delay: calc($transition_duration * 2/4);
 
       &:before {
         content: '//';
@@ -72,19 +71,33 @@ body {
     }
 
     &:hover .navbar-option:not(:hover) {
-      color: $textGreyGrey;
+      color: mix(black, $textGrey, 25%);
     }
   }
   font-family: "Space Mono", 'system-ui';
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
+
+  .heading {
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(100px);
+  }
 }
+
 .landing {
   display: flex;
   justify-content: space-between;
-  padding: 25vh 10vw 25vh;
+  align-items: center;
+  height: calc(90vh - $navbar_height);
+  padding: 0 10vw;
 
   .title {
     text-transform: uppercase;
@@ -115,26 +128,15 @@ body {
   .webgl {
     width: 100%;
     max-width: 600px;
+    height: 500px;
   }
 }
 .expertise {
-  padding: 10vh 10vw;
-  padding-top: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .heading {
-    text-align: center;
-    font-size: 3.5rem;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-  }
-
   .categories {
     display: grid;
     grid-template-columns: repeat(3, 350px);
     opacity: 0;
+    transform: translateY(100px);
 
     .category {
       border: 1px solid $textGrey;
@@ -157,8 +159,6 @@ body {
       }
 
       .description {
-        //padding-left: 1rem;
-        //border-left: 2px solid $textGreyGrey;
       }
     }
   }
@@ -168,6 +168,55 @@ body {
     z-index: -1;
     position: relative;
     top: -6rem;
+    transform: translateY(100px);
+  }
+}
+.projects {
+
+}
+.contact {
+  height: 65vh;
+
+  .contact-cta {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  .contact-link {
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: .5rem 1.5rem;
+    border: 3px solid $aqua;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(100px);
+
+    &:hover {
+      background: mix(black, $aqua, 75%);
+    }
+  }
+
+  .other-contact {
+    display: inline-flex;
+    opacity: 0;
+    transform: translateY(100px);
+
+    a {
+      margin: 0 .25rem;
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    &:hover a:not(:hover) {
+      opacity: .5;
+    }
   }
 }
 
