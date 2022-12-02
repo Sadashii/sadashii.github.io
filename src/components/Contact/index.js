@@ -12,22 +12,22 @@ const Contact = () => {
     let animations = [
       {
         element: titleRef.current,
-        start: 'top 65%',
-        end: 'bottom 50%',
-      },
-      {
-        element: categoriesRef.current,
-        start: 'top 65%',
-        end: 'bottom 50%',
-      },
-      {
-        element: contactButtonRef.current,
         start: 'top 75%',
         end: 'bottom 50%',
       },
       {
+        element: categoriesRef.current,
+        start: 'top 75%',
+        end: 'bottom 50%',
+      },
+      {
+        element: contactButtonRef.current,
+        start: 'top 85%',
+        end: 'bottom 50%',
+      },
+      {
         element: otherContactsRef.current,
-        start: 'top 80%',
+        start: 'top 90%',
         end: 'bottom 50%',
       },
     ]

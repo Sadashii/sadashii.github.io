@@ -51,7 +51,7 @@ const Expertise = () => {
     gsap.to(backgroundImageRef.current, {
       scrollTrigger: {
         trigger: backgroundImageRef.current,
-        start: "top 65%",
+        start: "top 75%",
         end: "bottom 50%",
         onEnter: () => onEnter(backgroundImageRef.current, .25),
         onLeaveBack: () => onLeaveBack(backgroundImageRef.current)

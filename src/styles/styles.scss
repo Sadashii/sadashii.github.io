@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
 
-/* variables.module.scss */
+// Variables
 $black_background: #1a191d;
 $navbar_height: 50px;
+$sidebar_size: min(450px, 100vw);
 
 $textWhite: #ffffff;
 $textGrey: rgba(249, 249, 249, 0.75);
@@ -14,7 +15,7 @@ $red: #d41c3e;
 $transition_duration: 250ms;
 $border_radius: 4px;
 
-
+// Base
 * {
   padding: 0;
   margin: 0;
@@ -26,6 +27,7 @@ body {
   background-color: $black_background;
 }
 
+// Navbar
 .navbar {
   display: flex;
   align-items: center;
@@ -35,6 +37,7 @@ body {
   height: $navbar_height;
   position: sticky;
   top: 0;
+  font-family: "Space Mono", 'system-ui';
 
   .navbar-logo {
     display: inline-flex;
@@ -74,19 +77,64 @@ body {
       color: mix(black, $textGrey, 25%);
     }
   }
-  font-family: "Space Mono", 'system-ui';
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+.hamburger {
+  display: block;
+  width: $navbar_height * .75;
+  cursor: pointer;
+  z-index: 100;
+
+  .sticks {
+    display: block;
+    height: $border_radius * .75;
+    margin-bottom: $border_radius * 2;
+    background-color: white;
+  }
+  .stick-1 {
+    $width: 60%;
+    width: $width;
+    margin-left: calc(100% - $width);
+  }
+  .stick-2 {
+    $width: 100%;
+    width: $width;
+    margin-left: calc(100% - $width);
+  }
+  .stick-3 {
+    $width: 80%;
+    width: $width;
+    margin-left: calc(100% - $width);
+  }
+}
+.hamburger-toggled {
+  .stick-1 {
+    width: 100%;
+    margin-left: 0;
+    transform: rotate(45deg) translateX(40%);
+  }
+  .stick-2 {
+    background-color: transparent;
+  }
+  .stick-3 {
+    width: 100%;
+    margin-left: 0;
+    transform: rotate(-45deg) translateX(40%);
+  }
 }
 
+// Page
 .page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
 
   .heading {
-    text-align: center;
-    font-size: 3.5rem;
-    margin-bottom: 2.5rem;
+    font-size: calc(2rem + 1.5vw);
+    margin-bottom: calc(1.5rem + 2vh);
     opacity: 0;
     transform: translateY(100px);
   }
@@ -96,27 +144,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: calc(90vh - $navbar_height);
+  height: calc(100vh - $navbar_height * 3);
   padding: 0 10vw;
 
   .title {
     text-transform: uppercase;
-    font-size: 4.5rem;
-    position: relative;
+    font-size: calc(2rem + 2vw);
+    margin-bottom: calc(.75rem + 1vw + 1rem);
 
     //&:after {
     //  content: "~ Sadashi";
-    //  position: absolute;
-    //  font-size: 1.25rem;
-    //  bottom: 0;
-    //  right: 0;
+    //  position: relative;
+    //  font-size: calc(.75rem + 1vw);
+    //  margin-top: calc(2rem + 2vw + .75rem + 1vw + 1rem);
+    //  transform: translate(100px, 100px) !important;
     //
-    //  background: -webkit-linear-gradient(180deg, $aqua 75%, $purple);
+    //  background: -webkit-linear-gradient(180deg, $aqua 85%, $green 15%);
     //  -webkit-background-clip: text;
     //  -webkit-text-fill-color: transparent;
     //}
   }
   .subtitle {
+    font-size: calc(1.25rem + .5vw);
     text-transform: uppercase;
     margin-bottom: 1rem;
   }
@@ -125,13 +174,14 @@ body {
     color: $textGrey;
   }
 
-  .webgl {
-    width: 100%;
-    max-width: 600px;
-    height: 500px;
-  }
+  //.webgl {
+  //  width: 100%;
+  //  max-width: 600px;
+  //  height: 500px;
+  //}
 }
 .expertise {
+  padding-top: 10vh;
   .categories {
     display: grid;
     grid-template-columns: repeat(3, 350px);
@@ -169,13 +219,33 @@ body {
     position: relative;
     top: -6rem;
     transform: translateY(100px);
+
+    img {
+      max-width: 90vw;
+    }
+  }
+
+  @media screen and (max-width: 767px){
+    .categories {
+      display: flex;
+      flex-direction: column;
+      padding: 0 2vw;
+
+      .category {
+        margin-bottom: 2vh;
+      }
+    }
   }
 }
 .projects {
 
+  .project {
+    opacity: 0;
+  }
 }
 .contact {
-  height: 65vh;
+  min-height: unset;
+  padding-bottom: 25vh;
 
   .contact-cta {
     font-size: 1.25rem;
@@ -230,7 +300,6 @@ body {
 .color-green {
   color: $green
 }
-
 
 // Scrollbar
 ::-webkit-scrollbar {
