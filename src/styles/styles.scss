@@ -182,6 +182,7 @@ body {
 }
 .expertise {
   padding-top: 10vh;
+
   .categories {
     display: grid;
     grid-template-columns: repeat(3, 350px);
@@ -190,7 +191,7 @@ body {
 
     .category {
       border: 1px solid $textGrey;
-      padding: 2.5rem;
+      padding: calc(1rem + 1vw);
 
       .title-container {
         display: flex;
@@ -225,7 +226,7 @@ body {
     }
   }
 
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 1060px){
     .categories {
       display: flex;
       flex-direction: column;
