@@ -240,8 +240,83 @@ body {
 }
 .projects {
 
-  .project {
-    opacity: 0;
+  .projects-container {
+    display: grid;
+    max-width: 90vw;
+    grid-template-columns: repeat(auto-fill, 450px);
+    grid-template-rows: minmax(min-content, max-content);
+    grid-gap: 2rem;
+
+    .project {
+      width: 100%;
+      opacity: 0;
+      transform: translateY(100px);
+      background-color: #201f23;
+      overflow: hidden;
+      cursor: pointer;
+
+      .banner {
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          display: block;
+          object-fit: cover;
+          max-height: 225px;
+        }
+      }
+      .footer {
+        padding: 1rem 1.5rem 1.5rem;
+
+        .title {
+          font-weight: bold;
+          font-size: 1.25rem;
+        }
+        .subtitle {
+          color: $textGrey;
+          height: 1.25rem;
+
+          .skills {
+          }
+          .view {
+            opacity: 0;
+            transform: translateY(25px);
+            cursor: pointer;
+
+            &:after {
+              content: ' ';
+              display: inline-block;
+              width: .5rem;
+              height: .5rem;
+              transform: rotate(45deg);
+              margin-left: .25rem;
+              border-top: 3px solid $aqua;
+              border-right: 3px solid $aqua;
+              visibility: visible;
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+        .footer {
+          .subtitle {
+            .skills {
+              transform: translateY(-25px);
+              opacity: 0;
+            }
+            .view {
+              transform: translateY(-25px);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
   }
 }
 .contact {
