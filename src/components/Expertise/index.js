@@ -1,10 +1,7 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import * as React from "react";
 import { useEffect, useRef } from "react";
 import backgroundImage from "../../images/expertise-bg.png"
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Expertise = () => {
   const titleRef = useRef();

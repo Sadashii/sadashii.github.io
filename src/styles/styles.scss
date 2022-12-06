@@ -126,7 +126,7 @@ body {
   }
 }
 
-// Page
+// Pages
 .page {
   display: flex;
   flex-direction: column;
@@ -266,6 +266,8 @@ body {
     margin-bottom: 1rem;
     opacity: 0;
     transform: translateY(100px);
+    background-color: transparent;
+    cursor: pointer;
 
     &:hover {
       background: mix(black, $aqua, 75%);
@@ -314,4 +316,31 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: $textGrey;
+}
+
+// Cursor
+.customCursor {
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid $aqua;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: -1rem 0 0 -1rem;
+  mix-blend-mode: lighten;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:after {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: $aqua;
+    border-radius: 50%;
+    content: ' ';
+    visibility: visible;
+  }
 }

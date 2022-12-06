@@ -1,23 +1,23 @@
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import { useRef } from "react";
+//import { useFrame, useLoader } from "@react-three/fiber";
+//import { useRef } from "react";
 import * as React from "react"
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
+//import { GLTFLoader } from "three/addons/loaders/GLTFLoader";
 
-const Avatar = (props) => {
-  const avatarRef = useRef()
-  const gltf = useLoader(GLTFLoader, '/scene.gltf')
-  
-  useFrame(({ mouse }) => {
-    avatarRef.current.rotation.y = mouse.x;
-    avatarRef.current.rotation.x = -mouse.y;
-  });
-  
-  return (
-    <mesh ref={avatarRef} {...props}>
-      <primitive object={gltf.scene} />
-    </mesh>
-  )
-}
+//const Avatar = (props) => {
+//  const avatarRef = useRef()
+//  const gltf = useLoader(GLTFLoader, '/scene.gltf')
+//
+//  useFrame(({ mouse }) => {
+//    avatarRef.current.rotation.y = mouse.x;
+//    avatarRef.current.rotation.x = -mouse.y;
+//  });
+//
+//  return (
+//    <mesh ref={avatarRef} {...props}>
+//      <primitive object={gltf.scene} />
+//    </mesh>
+//  )
+//}
 
 const Landing = () => {
   

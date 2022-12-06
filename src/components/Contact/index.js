@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 import * as React from "react"
+import copy from "clipboard-copy";
 
 const Contact = () => {
   const titleRef = useRef();
@@ -62,9 +63,15 @@ const Contact = () => {
       <p className="contact-cta" ref={categoriesRef}>
         Nothing too fancy here - I'd love to have a chat with you whether it's for a cool project or just a hey!
       </p>
-      <a href={'mailto:tanishqsangwan7@gmail.com'} className={'contact-link'} ref={contactButtonRef} target={"_blank"} rel={'noreferrer'}>
-        <p>Write to me</p>
-      </a>
+      <p onClick={async () => {
+        await copy('tanishqsangwan7@gmail.com')
+        contactButtonRef.current.innerText = 'Copied!'
+        setTimeout(() => contactButtonRef.current.innerText = 'tanishqsangwan7@gmail.com', 5000)
+      }}
+      className={'contact-link'}
+      ref={contactButtonRef}>
+        tanishqsangwan7@gmail.com
+      </p>
       <div className="other-contact" ref={otherContactsRef}>
         <a href={'https://www.instagram.com/iamtanishqbtw/'} target={"_blank"} rel={'noreferrer'}>
           <svg viewBox="0 0 24 24">
