@@ -150,19 +150,7 @@ body {
   .title {
     text-transform: uppercase;
     font-size: calc(2rem + 2vw);
-    margin-bottom: calc(.75rem + 1vw + 1rem);
-
-    //&:after {
-    //  content: "~ Sadashi";
-    //  position: relative;
-    //  font-size: calc(.75rem + 1vw);
-    //  margin-top: calc(2rem + 2vw + .75rem + 1vw + 1rem);
-    //  transform: translate(100px, 100px) !important;
-    //
-    //  background: -webkit-linear-gradient(180deg, $aqua 85%, $green 15%);
-    //  -webkit-background-clip: text;
-    //  -webkit-text-fill-color: transparent;
-    //}
+    margin-bottom: calc(.5rem + 1vw);
   }
   .subtitle {
     font-size: calc(1.25rem + .5vw);

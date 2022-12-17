@@ -63,23 +63,11 @@ const Expertise = () => {
         <div className="category">
           <div className="title-container">
             <svg viewBox="0 0 24 24">
-              <path fill="currentColor" d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z"/>
-            </svg>
-            <h3 className="title">
-              <span className="color-blue">Software</span> Development</h3>
-          </div>
-          <p className="description">Coding is fun, what's better? Knowing both OOP and functional programming, I love Python and JavaScript the most that's
-            why.</p>
-        </div>
-        <div className="category">
-          <div className="title-container">
-            <svg viewBox="0 0 24 24">
               <path fill="currentColor" d="M23,11H18A1,1 0 0,0 17,12V21A1,1 0 0,0 18,22H23A1,1 0 0,0 24,21V12A1,1 0 0,0 23,11M23,20H18V13H23V20M20,2H2C0.89,2 0,2.89 0,4V16A2,2 0 0,0 2,18H9V20H7V22H15V20H13V18H15V16H2V4H20V9H22V4C22,2.89 21.1,2 20,2Z" />
             </svg>
             <h3 className="title"><span className="color-green">Frontend</span> Development</h3>
           </div>
-          <p className="description">In love with making beautiful sleek webpages, they come out best when I'm working with React (Razzle.js/Next.js/Gatsby) and
-            Material UI with hint of sass every now and then. </p>
+          <p className="description">A good webpage makes a developer smile, working with React (Razzle.js/Next.js/Gatsby) with a hint of Material UI and SASS does wonders.</p>
         </div>
         <div className="category">
           <div className="title-container">
@@ -88,7 +76,17 @@ const Expertise = () => {
             </svg>
             <h3 className="title"><span className="color-red">Backend</span> Development</h3>
           </div>
-          <p className="description">Just like a body needs a heart, a website is incomplete without a backend. For me, it's express.js or flask.</p>
+          <p className="description">A body needs a heart, webapps a backend. Plus, backend's awesome so I love it, express.js and flask the most.</p>
+        </div>
+        <div className="category">
+          <div className="title-container">
+            <svg viewBox="0 0 24 24">
+              <path fill="currentColor" d="M4,6H20V16H4M20,18A2,2 0 0,0 22,16V6C22,4.89 21.1,4 20,4H4C2.89,4 2,4.89 2,6V16A2,2 0 0,0 4,18H0V20H24V18H20Z"/>
+            </svg>
+            <h3 className="title">
+              <span className="color-blue">Software</span> Development</h3>
+          </div>
+          <p className="description">Web development is fun, what's better? Knowing both OOP and functional programming, I love Python and JavaScript the most that's why.</p>
         </div>
       </div>
       <div className="background-image" ref={backgroundImageRef}>
