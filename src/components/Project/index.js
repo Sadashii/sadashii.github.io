@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react"
 import { CustomCursor, Footer, Navbar } from "../index";
 
@@ -49,6 +50,36 @@ const Project = ({ pageContext: project, location }) => {
       </div>
       <Footer />
       <CustomCursor />
+    </>
+  )
+}
+
+export const Head = ({ pageContext: project, location }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title,
+          siteUrl,
+        }
+      }
+    }
+  `)
+  let { title, siteUrl} = data.site.siteMetadata
+  
+  title = `${project.name} - by ${title}`
+  let description = project.description
+  
+  return (
+    <>
+      <title>{title}</title>
+      <meta name={'description'} content={project.description} />
+      <link rel="canonical" href={`${siteUrl}${location.pathname}`} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={`${siteUrl}${location.pathname}`} />
+      <meta property="og:image" content={`${siteUrl}/projects/${project.banner}`} />
+      
     </>
   )
 }
