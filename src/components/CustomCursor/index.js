@@ -31,11 +31,18 @@ const CustomCursor = () => {
       scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       cursor.animate('y', scrollTop + mouseY)
     })
+    const ontouchlistener = (event) => {
+      cursor.animate('x', event.clientX);
+      cursor.animate('y', event.clientY + scrollTop);
+    }
+    document.addEventListener('touchmove', event => ontouchlistener(event.touches[0]))
+    document.addEventListener('touchend', event => ontouchlistener(event.changedTouches[0]))
   }, [])
   
-  
   return (
-    <div ref={customCursorRef} className="customCursor"></div>
+    <>
+      <div ref={customCursorRef} className="customCursor"></div>
+    </>
   )
 }
 
