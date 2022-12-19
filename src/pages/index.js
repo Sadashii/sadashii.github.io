@@ -1,57 +1,25 @@
-import { useEffect, useRef } from "react";
 import * as React from "react"
 import "../styles/styles.scss"
-import { Contact, Expertise, Landing, Navbar, Projects } from "../components";
-import Kinet from 'kinet';
+import { Contact, CustomCursor, Expertise, Footer, Landing, Navbar, Projects } from "../components";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const IndexPage = () => {
-  const customCursorRef = useRef()
-  
-  useEffect(() => {
-    const cursorEl = customCursorRef.current
-    const cursor = new Kinet({
-      acceleration: .2,
-      names: ['x', 'y'] // 'Instances' on which our cursor will move
-    })
-    let mouseY = 0
-    let scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-    
-    cursor.on('tick', function(instances) {
-      cursorEl.style.top = `${instances.y.current}px`
-      cursorEl.style.left = `${instances.x.current}px`
-      let divider = 10
-      let scale = Math.max(instances.x.velocity / divider, instances.y.velocity / divider, 1)
-      cursorEl.style.transform = `scaleX(${scale}), scaleY(${scale})`;
-    });
-    
-    document.addEventListener('mousemove', (event) => {
-      cursor.animate('x', event.clientX);
-      cursor.animate('y', event.clientY + scrollTop);
-      mouseY = event.clientY
-    })
-    document.addEventListener('scroll', event => {
-      scrollTop = document.documentElement.scrollTop || document.body.scrollTop
-      cursor.animate('y', scrollTop + mouseY)
-    })
-  }, [])
+const IndexPage = ({ location }) => {
   
   return (
     <>
-      <Navbar />
+      <Navbar location={location} />
       <Landing />
       <Expertise />
       <Projects />
       <Contact />
-      <p style={{textAlign: 'center', marginBottom: '2rem', opacity: '.7'}}>Made by ❤️by <a href={"https://github.com/Sadashii"} rel={'noreferrer'} target={"_blank"}>Tanishq Sangwan</a> / ©2023</p>
-      <div ref={customCursorRef} className="customCursor"></div>
+      <Footer />
+      <CustomCursor />
     </>
   )
 }
-
 
 export const Head = () => {
   //let domain = 'sadashi.xyz'
@@ -82,4 +50,4 @@ export const Head = () => {
     )
 }
 
-export default IndexPage
+export default IndexPage;

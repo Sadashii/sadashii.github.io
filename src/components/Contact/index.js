@@ -58,7 +58,7 @@ const Contact = () => {
   });
   
   return (
-    <div className="expertise page contact">
+    <div className="expertise page contact" id={'contact'}>
       <h2 className="heading" ref={titleRef}>Contact</h2>
       <p className="contact-cta" ref={categoriesRef}>
         Nothing too fancy here - I'd love to have a chat with you whether it's for a cool project or just a hey!

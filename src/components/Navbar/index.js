@@ -1,8 +1,9 @@
+import { Link } from "gatsby";
 import { useEffect, useState } from "react";
 import * as React from "react"
 import { useMobileView } from "../../utils/useMobileView";
 
-const Navbar = () => {
+const Navbar = ({ location }) => {
   const [showSidebar, setShowSidebar] = useState(false)
   const [showScrollNavbar, setShowScrollNavbar] = useState(true);
   const isMobileView = useMobileView()
@@ -29,14 +30,29 @@ const Navbar = () => {
     if (typeof element === "number") {
       top = element
     } else {
-      let rect = element.getBoundingClientRect()
-      let height = rect.height
-      let pageHeight = window.innerHeight
-      let padding = (Math.abs(pageHeight - height)) / 2
-      top = element.offsetTop + padding
+      //let rect = element.getBoundingClientRect()
+      //let height = rect.height
+      //let pageHeight = window.innerHeight
+      //let padding = (Math.abs(pageHeight - height)) / 2
+      //top = element.offsetTop + padding
+      top = element.offsetTop
     }
     
     window.scrollTo({ top: top, behavior: 'smooth' })
+  }
+  
+  const goToPage = (e) => {
+    if (location.pathname === e.target.pathname) { // On the same page
+      e.preventDefault()
+  
+      if (!e.target.hash) {
+        return scrollTo(0)
+      }
+      
+      let el = document.getElementById(e.target.hash.slice(1))
+      let scrollHeight = el.dataset.scrollHeight // Sorta override for what height it should scroll to
+      scrollTo(scrollHeight ? parseInt(scrollHeight) : el)
+    }
   }
   
   return (
@@ -49,34 +65,25 @@ const Navbar = () => {
               <span className="sticks stick-3" />
             </div>
           )}
-          <div className="navbar-logo" onClick={() => scrollTo(0)}>
-            <span className="pre">Tanishq</span>
-            <span className="mid">.</span>
-            <span className="post">_</span>
-          </div>
+        <Link to={'/'} className={'navbar-logo'} onClick={goToPage}>
+          <span className="pre">Tanishq</span>
+          <span className="mid">.</span>
+          <span className="post">_</span>
+        </Link>
         {!isMobileView && (
           <div className="navbar-options">
-            <div
-              className="navbar-option"
-              onClick={() => scrollTo(0)}
-            >
+            <Link to={'/'} className="navbar-option" onClick={goToPage}>
               About
-            </div>
-            <div
-              className="navbar-option"
-              onClick={() => scrollTo(document.getElementsByClassName('expertise')[0])}>
+            </Link>
+            <Link to={'/#expertise'} className="navbar-option" onClick={goToPage}>
               Expertise
-            </div>
-            <div
-              className="navbar-option"
-              onClick={() => scrollTo(document.getElementsByClassName('projects')[0])}>
-              Work
-            </div>
-            <div
-              className="navbar-option"
-              onClick={() => scrollTo(document.getElementsByClassName('contact')[0])}>
+            </Link>
+            <Link to={'/#projects'} className="navbar-option" onClick={goToPage}>
+              Projects
+            </Link>
+            <Link to={'/#contact'} className="navbar-option" onClick={goToPage}>
               Contact
-            </div>
+            </Link>
           </div>
         )}
       </div>

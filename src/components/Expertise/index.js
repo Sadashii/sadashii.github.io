@@ -57,7 +57,7 @@ const Expertise = () => {
   });
   
   return (
-    <div className="expertise page">
+    <div className="expertise page" id={'expertise'}>
       <h2 className="heading" ref={titleRef}>My Expertise</h2>
       <div className="categories" ref={categoriesRef}>
         <div className="category">

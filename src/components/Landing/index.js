@@ -22,7 +22,7 @@ import * as React from "react"
 const Landing = () => {
   
   return (
-    <div className={'landing'}>
+    <div className={'landing'} id={'landing'} data-scroll-height={0}>
       <div className="content">
         <h1 className="title">Tanishq Sangwan</h1>
         <h2 className="subtitle">I code things.</h2>
