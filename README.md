@@ -1,9 +1,11 @@
-<div style="text-align: center">
-  <a href="https://sadashi.xyz">
-    <img alt="Gatsby" src="./static/logo.png" width="64" />
-    <h2 style="color: white">sadashi.xyz</h2>
-  </a>
-</div>
+<a href="https://sadashi.xyz">
+  <div align="center">
+    <img src="./static/logo.png" width="100" />
+  </div>
+  <h1 align="center">
+    sadashi.xyz
+  </h1>
+</a>
 <hr>
 <h4 style="text-align: center">This is my portfolio website, hope you like it :D</h4>
 
