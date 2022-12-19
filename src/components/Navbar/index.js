@@ -18,6 +18,9 @@ const Navbar = ({ location }) => {
         setShowScrollNavbar(direction);
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
+      if (showSidebar) {
+        setShowSidebar(false)
+      }
     };
     window.addEventListener("scroll", updateScrollDirection); // add event listener
     return () => {
@@ -30,11 +33,6 @@ const Navbar = ({ location }) => {
     if (typeof element === "number") {
       top = element
     } else {
-      //let rect = element.getBoundingClientRect()
-      //let height = rect.height
-      //let pageHeight = window.innerHeight
-      //let padding = (Math.abs(pageHeight - height)) / 2
-      //top = element.offsetTop + padding
       top = element.offsetTop
     }
     
@@ -57,14 +55,14 @@ const Navbar = ({ location }) => {
   
   return (
     <>
-      <div className="navbar" style={{opacity: (showScrollNavbar ? 1 : 0)}}>
-          {isMobileView && (
-            <div className={`hamburger ${showSidebar && 'hamburger-toggled'}`} onClick={() => setShowSidebar(!showSidebar)}>
-              <span className="sticks stick-1" />
-              <span className="sticks stick-2" />
-              <span className="sticks stick-3" />
-            </div>
-          )}
+      <div className="navbar" style={{opacity: showSidebar ? 1 : (showScrollNavbar ? 1 : 0)}}>
+        {isMobileView && (
+          <div className={`hamburger ${showSidebar && 'hamburger-toggled'}`} onClick={() => {setShowSidebar(!showSidebar); setShowScrollNavbar(true)}}>
+            <span className="sticks stick-1" />
+            <span className="sticks stick-2" />
+            <span className="sticks stick-3" />
+          </div>
+        )}
         <Link to={'/'} className={'navbar-logo'} onClick={goToPage}>
           <span className="pre">Tanishq</span>
           <span className="mid">.</span>
@@ -86,6 +84,23 @@ const Navbar = ({ location }) => {
             </Link>
           </div>
         )}
+        {showSidebar && <div className={'background-blur'} />}
+        <div className={`sidebar ${showSidebar && 'sidebar-toggled'}`}>
+          <div className="sidebar-options">
+            <Link to={'/'} className="navbar-option" onClick={goToPage}>
+              About
+            </Link>
+            <Link to={'/#expertise'} className="navbar-option" onClick={goToPage}>
+              Expertise
+            </Link>
+            <Link to={'/#projects'} className="navbar-option" onClick={goToPage}>
+              Projects
+            </Link>
+            <Link to={'/#contact'} className="navbar-option" onClick={goToPage}>
+              Contact
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   )

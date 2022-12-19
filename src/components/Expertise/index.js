@@ -67,7 +67,7 @@ const Expertise = () => {
             </svg>
             <h3 className="title"><span className="color-green">Frontend</span> Development</h3>
           </div>
-          <p className="description">A good webpage makes a developer smile, working with React (Razzle.js/Next.js/Gatsby) with a hint of Material UI and SASS does wonders.</p>
+          <p className="description">I am passionate about UI/UX development and have experience working with React (using Razzle.js, Next.js, and Gatsby) and Material UI, SASS for styling.</p>
         </div>
         <div className="category">
           <div className="title-container">
@@ -76,7 +76,7 @@ const Expertise = () => {
             </svg>
             <h3 className="title"><span className="color-red">Backend</span> Development</h3>
           </div>
-          <p className="description">A body needs a heart, webapps a backend. Plus, backend's awesome so I love it, express.js and flask the most.</p>
+          <p className="description">Just as a body needs a heart, web applications need a backend. I have a particular love for backend development, especially using express.js and flask.</p>
         </div>
         <div className="category">
           <div className="title-container">

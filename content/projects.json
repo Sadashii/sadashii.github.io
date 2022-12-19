@@ -1,7 +1,7 @@
 [
   {
     "name": "AnonChat",
-    "description": "An web-based anonymous chat service that allows for time-restricted and password-protected chatroom's.",
+    "description": "An web-based anonymous chat service that allows for time-restricted and password-protected chatrooms.",
     "data": [
       {
         "title": "Language",
@@ -24,7 +24,7 @@
   },
   {
     "name": "TechXPlore",
-    "description": "Designed for a competition - a website (part webapp) for EV related startups to gain attention and funding",
+    "description": "Designed for a competition - a website (part webapp) for EV related startups to gain attention and funding.",
     "data": [
       {
         "title": "Language",

@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `Tanishq Sangwan`,
     description: 'Fullstack developer who specializes in building on the web with MERN and Next.js handy.',
-    siteUrl: `http://localhost:8000`,
+    siteUrl: `https://sadashi.xyz`,
   },
   plugins: [
     "gatsby-plugin-sass",

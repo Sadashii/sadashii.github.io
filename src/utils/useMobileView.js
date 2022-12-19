@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const isBrowser = typeof window !== "undefined"
 
 export const useMobileView = (size = 768) => {
-  const [screenSize, setScreenSize] = useState([]);
+  const [screenSize, setScreenSize] = useState(isBrowser ? [window.innerHeight, window.innerWidth] : []);
   const [isMobileView, setIsMobileView] = useState(false);
   
   useEffect(() => {

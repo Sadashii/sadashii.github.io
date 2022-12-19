@@ -26,7 +26,7 @@ const Landing = () => {
       <div className="content">
         <h1 className="title">Tanishq Sangwan</h1>
         <h2 className="subtitle">I code things.</h2>
-        <p className="about">High school student by day, fullstack developer by night. I love building things, websites mainly but messing around here and there too (WebGL's pretty cool).</p>
+        <p className="about">High school student by day, fullstack developer by night. I enjoy building websites and occasionally experimenting with other technologies like WebGL. Overall, I love the process of creating things.</p>
       </div>
       {/* <div className="webgl"> */}
       {/*   <Canvas camera={{ position: [0, 0, 45]}}> */}

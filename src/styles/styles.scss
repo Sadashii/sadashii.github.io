@@ -25,6 +25,7 @@ $border_radius: 4px;
 }
 body {
   background-color: $black_background;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -61,31 +62,77 @@ a {
       opacity: .75;
     }
   }
-
   .navbar-options {
     display: inline-flex;
+    gap: $border-radius * 4;
 
-    .navbar-option {
-      cursor: pointer;
-      margin-right: $border_radius * 4;
-      transition-delay: calc($transition_duration * 2/4);
-
-      &:before {
-        content: '//';
-        margin-right: $border_radius;
-        color: mix(black, $aqua, 20%);
-      }
-    }
-
-    &:hover .navbar-option:not(:hover) {
-      color: mix(black, $textGrey, 25%);
-    }
   }
-
   &:hover {
     opacity: 1 !important;
   }
 }
+@media screen and (max-width: 767px){
+  .navbar {
+    padding: 1rem 1rem;
+  }
+}
+.sidebar {
+  background-color: #201f23;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  max-width: 350px;
+  transform: translateX(-100%);
+  display: flex;
+  align-items: center;
+  padding: 15vh 0;
+  box-sizing: border-box;
+  transition: all $transition_duration * 2 ease-in-out;
+
+  .sidebar-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 4vh;
+  }
+
+  .navbar-option {
+    padding: 1rem 2rem;
+    font-size: 1.35rem !important;
+  }
+}
+.sidebar-toggled {
+  transform: translate(0);
+}
+.background-blur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(.3rem);
+}
+
+.navbar-options, .sidebar-options {
+  .navbar-option {
+    cursor: pointer;
+    transition-delay: calc($transition_duration * 2/4);
+    font-size: 1.1rem;
+    &:before {
+      content: '//';
+      margin-right: $border_radius;
+      color: mix(black, $aqua, 20%);
+    }
+  }
+  &:hover .navbar-option:not(:hover) {
+    color: mix(black, $textGrey, 25%);
+  }
+}
+
 .hamburger {
   display: block;
   width: $navbar_height * .75;
@@ -233,14 +280,16 @@ a {
 .projects {
 
   .projects-container {
-    display: grid;
     max-width: 90vw;
-    grid-template-columns: repeat(auto-fill, 450px);
-    grid-template-rows: minmax(min-content, max-content);
-    grid-gap: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
 
     .project {
       width: 450px;
+      max-width: 90vw;
       opacity: 0;
       transform: translateY(100px);
       background-color: #201f23;
