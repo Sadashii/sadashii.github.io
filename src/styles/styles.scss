@@ -97,13 +97,14 @@ a {
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: 6vh;
+    gap: 5vh;
   }
 
   .navbar-option {
     font-size: 1.35rem !important;
     width: 100%;
     text-align: center;
+    padding: 1rem 0;
   }
 }
 .sidebar-toggled {
