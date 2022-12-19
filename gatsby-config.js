@@ -7,14 +7,17 @@ module.exports = {
     description: 'Fullstack developer who specializes in building on the web with MERN and Next.js handy.',
     siteUrl: `http://localhost:8000`,
   },
-  plugins: ["gatsby-plugin-sass", "gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  plugins: [
+    "gatsby-plugin-sass",
+    {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
       "path": "./src/images/"
     },
     __key: "images"
-  }, {
+  },
+    {
     resolve: 'gatsby-plugin-manifest',
     options: {
       name: `Tanishq Sangwan - Fullstack Developer & Software Engineer`,
@@ -36,5 +39,8 @@ module.exports = {
         }
       ],
     }
-  }, 'gatsby-plugin-offline']
+  },
+    'gatsby-plugin-offline',
+    'gatsby-plugin-sitemap'
+  ]
 };

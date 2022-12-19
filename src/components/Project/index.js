@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react"
 import { CustomCursor, Footer, Navbar } from "../index";
+import "../../styles/styles.scss"
 
 const Project = ({ pageContext: project, location }) => {
   return (
