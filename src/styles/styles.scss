@@ -322,6 +322,8 @@ a {
           height: 1.25rem;
 
           .skills {
+            overflow: hidden;
+            height: 1.25rem;
           }
           .view {
             opacity: 0;
@@ -467,6 +469,7 @@ a {
       .data {
         width: fit-content;
         min-width: 10rem;
+        max-width: 18rem;
         .data-title {
           font-size: 1.2rem;
           font-weight: bold;
@@ -503,6 +506,9 @@ a {
       }
       .miscdata {
         max-width: unset;
+        .data {
+          max-width: unset;
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 [
   {
     "name": "AnonChat",
-    "description": "An web-based anonymous chat service that allows for time-restricted and password-protected chatrooms.",
+    "description": "A web-based chat service which allows users to create anonymous, time-restricted and password-protected chatrooms for secure communication.",
     "data": [
       {
         "title": "Language",
@@ -9,7 +9,7 @@
       },
       {
         "title": "Technology",
-        "content": ["Flask", "WebSockets"]
+        "content": ["Flask", "WebSockets", "CSS", "jQuery"]
       }
     ],
     "links": {
@@ -24,7 +24,7 @@
   },
   {
     "name": "TechXPlore",
-    "description": "Designed for a competition - a website (part webapp) for EV related startups to gain attention and funding.",
+    "description": "This competition-focused website is designed to assist startups in the EV field to gain attention and funding.",
     "data": [
       {
         "title": "Language",
@@ -49,7 +49,7 @@
   },
   {
     "name": "GameBot",
-    "description": "A Discord.js bot that allows users to play a large variety of games from within discord with advanced user statistics and sleek process design for the best experience.",
+    "description": "This discord.js bot offers users to play a wide range of games within Discord itself, featuring advanced user statistics and sleek game design for the best experience.",
     "data": [
       {
         "title": "Language",
@@ -67,6 +67,30 @@
     "images": [
       "gamebot_landing.png",
       "gamebot_hangman.png"
+    ]
+  },
+  {
+    "name": "Hoopla",
+    "description": "This to-do software app is designed to help you manage all your plans, while keeping the distractions to a minimum for maximum productivity.",
+    "data": [
+      {
+        "title": "Language",
+        "content": "JavaScript"
+      },
+      {
+        "title": "Technology",
+        "content": ["Next.js", "MongoDB", "MaterialUI & SASS", "Authentication Funnel"]
+      }
+    ],
+    "links": {
+      "github": "Sadashii/Hoopla"
+    },
+    "banner": "hoopla_landing.png",
+    "images": [
+      "hoopla_3.png",
+      "hoopla_1.png",
+      "hoopla_2.png",
+      "hoopla_4.png"
     ]
   }
 ]

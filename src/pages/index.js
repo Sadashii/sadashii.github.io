@@ -43,7 +43,7 @@ export const Head = () => {
       <meta property="og:title" content={`${title} - Fullstack Developer & Software Engineer`} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={`${siteUrl}/`} />
-      <meta property="og:image" content={`${siteUrl}/favicon-32x32.png`} />
+      <meta property="og:image" content={`${siteUrl}/logo.png`} />
     </>
   )
 }

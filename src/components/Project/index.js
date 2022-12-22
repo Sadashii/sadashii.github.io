@@ -42,6 +42,7 @@ const Project = ({ pageContext: project, location }) => {
           </div>
         </div>
         <div className="images">
+          <img src={`/projects/${project.banner}`} alt={'Project Image'} className={'image'} />
           {project.images.map(image => {
             return (
               <img src={`/projects/${image}`} alt={'Project Image'} className={'image'} />
