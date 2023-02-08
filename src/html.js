@@ -23,15 +23,10 @@ export default function HTML(props) {
   
         <meta name="theme-color" content="#1a191d" />
   
-        <!-- Google tag (gtag.js) -->
+        {/* Google Tag Manager */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-37RT17S664"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
-          gtag('js', new Date());
-    
-          gtag('config', 'G-37RT17S664');
-        </script>
+        <script>{`window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-37RT17S664');`}</script>
+        
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
